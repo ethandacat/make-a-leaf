@@ -1,0 +1,97 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://title.gd" id="1_title"]
+[ext_resource type="PackedScene" path="res://background.tscn" id="2_bg"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="Background" parent="." instance=ExtResource("2_bg")]
+layout_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleRow" type="HBoxContainer" parent="Center/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 24
+
+[node name="LeftLeaf" type="TextureRect" parent="Center/VBox/TitleRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 90)
+layout_mode = 2
+pivot_offset = Vector2(35, 45)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="Center/VBox/TitleRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+theme_override_constants/outline_size = 18
+text = "Make A Leaf"
+horizontal_alignment = 1
+
+[node name="RightLeaf" type="TextureRect" parent="Center/VBox/TitleRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 90)
+layout_mode = 2
+pivot_offset = Vector2(35, 45)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="Center/VBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "start leafing"
+
+[node name="CreditsButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "credits"
+
+[node name="QuitButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "quit"
+
+[node name="SoundButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "sound: on"
+
+[node name="StatsLabel" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "leaves saved: 0    leaves lost: 0"
+horizontal_alignment = 1

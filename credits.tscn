@@ -1,0 +1,91 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_credits"]
+[ext_resource type="PackedScene" path="res://background.tscn" id="2_bg"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_credits")
+
+[node name="Background" parent="." instance=ExtResource("2_bg")]
+layout_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Heading" type="Label" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+theme_override_constants/outline_size = 16
+text = "credits"
+horizontal_alignment = 1
+
+[node name="Panel" type="PanelContainer" parent="Center/VBox"]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="Center/VBox/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="GameTitle" type="Label" parent="Center/VBox/Panel/Rows"]
+modulate = Color(1, 0.82, 0.35, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "game and art"
+horizontal_alignment = 1
+
+[node name="GameName" type="Label" parent="Center/VBox/Panel/Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "ethan"
+horizontal_alignment = 1
+
+[node name="MusicTitle" type="Label" parent="Center/VBox/Panel/Rows"]
+modulate = Color(1, 0.82, 0.35, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "music"
+horizontal_alignment = 1
+
+[node name="MusicName" type="Label" parent="Center/VBox/Panel/Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "\"gone fishin'\" by memoraphile
+(you're perfect studio, cc0)"
+horizontal_alignment = 1
+
+[node name="FontTitle" type="Label" parent="Center/VBox/Panel/Rows"]
+modulate = Color(1, 0.82, 0.35, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "font"
+horizontal_alignment = 1
+
+[node name="FontName" type="Label" parent="Center/VBox/Panel/Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "augie"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "back"

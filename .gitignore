@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Export output (the web build is attached to GitHub Releases instead)
+/build/
+
+# Local editor/tool settings
+/.claude/
